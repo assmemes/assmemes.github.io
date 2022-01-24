@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" type="text/css"/>
+        <title>Kinder wünscht dir eine wunderbare Weihnachtszeit mit dem Kinder Schokoladenweihnachtsmann</title>
+    </head>
+
+    <img id="meme">
+
+    <script>
+        if(!document.cookie.includes("counter")){
+            document.cookie = "counter=0"; 
+        }
+
+        let counter=document.cookie.slice(8,9+(document.cookie.length-9));
+
+        console.log(counter, document.cookie)
+
+        let bilderGesamt = 1
+
+        if(counter > bilderGesamt){
+            document.cookie = "counter=" + bilderGesamt; //lass mich mit error handling ich kann das nicht
+            counter = bilderGesamt;
+        }
+
+        //zeisch meme hier jaja
+
+        let meme = "memes/"+counter+".gif";
+
+        counter++;
+
+        document.getElementById("meme").src = meme;
+
+        document.cookie="counter="+counter;
+
+        //document.cookie="counter="+counter+";max-age=0"; keine ahnung wie besoffen ich da war
+        
+    </script>
+
+    <body>
+
+    </body>
+</html>
