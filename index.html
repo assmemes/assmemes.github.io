@@ -2,40 +2,23 @@
 
 <html>
     <head>
-        <link rel="stylesheet" href="style.css" type="text/css"/>
-        <title>Kinder wünscht dir eine wunderbare Weihnachtszeit mit dem Kinder Schokoladenweihnachtsmann</title>
     </head>
+    
+    <input type="text" id="feld" name="feld">
+    <button onclick="onClick()">abschicken</button>
+    <b id="status"></b>
 
-    <img id="meme">
+    <script> 
+        function onClick() {
+            console.log(document.getElementById("feld").value)
 
-    <script>
-        if(!document.cookie.includes("counter")){
-            document.cookie = "counter=1"; 
+            if(document.getElementById("feld").value == "gratis") {
+                document.getElementById("status").textContent = "top";
+                return;
+            }
+            document.getElementById("status").textContent = 
+            document.getElementById("feld").value + " ok";
         }
-
-        let counter=document.cookie.slice(8,9+(document.cookie.length-9));
-
-        console.log(counter, document.cookie)
-
-        let bilderGesamt = 1
-
-        if(counter > bilderGesamt){
-            document.cookie = "counter=" + bilderGesamt; //lass mich mit error handling ich kann das nicht
-            counter = bilderGesamt;
-        }
-
-        //zeisch meme hier jaja
-
-        let meme = "memes/"+counter+".gif";
-
-        counter++;
-
-        document.getElementById("meme").src = meme;
-
-        document.cookie="counter="+counter;
-
-        //document.cookie="counter="+counter+";max-age=0"; keine ahnung wie besoffen ich da war
-        
     </script>
 
     <body>
