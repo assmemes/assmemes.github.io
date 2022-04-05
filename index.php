@@ -20,6 +20,9 @@
             document.getElementById("feld").value + " ok";
         }
     </script>
+    <?php
+    echo "ok";
+    ?>
 
     <body>
 
